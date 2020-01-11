@@ -25,13 +25,13 @@ Formeln
 """
 
 def lorentzkraft(q,v_v, B_v):
-    
     """
     Berechnet Lorentzkraft
     q = Ladung
     v_v = geschwindigkeits_vektor
     B_v = Magnetfeld_vektor
     """
+    
     return np.cross((q*v_v),B_v)
 
 def lorentzkraft_betraege(q, v, B, sigma):
@@ -43,18 +43,21 @@ def lorentzkraft_betraege(q, v, B, sigma):
     sigma = Zwischenwinkel Geschwindigkeits-Vektor und
     Magnetfeld-Vektor
     """
+    
     return q * v * B * basic.sinus(sigma)
  
 def tesla2gauss(t):
     """
     Umwandlung Telsa zu Gauss
     """
+    
     return t*1e-4
 
 def gauss2tesla(g):
     """
     Umwandlung Gauss zu Telsa
     """
+    
     return g*1e4
 
 
