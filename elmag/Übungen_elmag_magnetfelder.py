@@ -9,6 +9,7 @@ import sys
 sys.path.append("..")
 
 import numpy as np
+import sympy as sp
 import elmag_formelsammlung as elmag
 import basic_arithmetic.basic as basic
 
@@ -35,4 +36,24 @@ def drahtstueck_im_magnetfeld():
     B = 0.02
     winkel = np.radians(30)
     
-    print(elmag.lorentzkraft_durch_stromdurchflossenen_leiter_betrag(I, l, B, winkel))
+    F_l = elmag.lorentzkraft_durch_stromdurchflossenen_leiter_betrag(I, l, B, winkel)
+    
+    print(F_l)
+    
+def kreisbewegungs_im_magnetfeld():
+    """
+    Seite 109
+    """
+    
+    m = elmag.masse_proton
+    q = elmag.elementarladung
+    B = 0.4
+    r = 21e-2
+    
+    
+    T = 1/elmag.Zyklotronfrequenz(q, B, m)
+    
+    v = (r*q*B)/m
+    
+    basic.printeng(T)
+    basic.printeng(v)

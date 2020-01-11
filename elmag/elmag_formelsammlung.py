@@ -133,8 +133,7 @@ def Zyklotronfrequenz(q, B, m):
     Bewgungsrichtung liegendem Magnetfeld.
     """
     
-    T = (2*np.pi*m)/(q*B)
-    f = 1/T
+    f = (q*B)/(2*np.pi*m)
     
     return f
 
