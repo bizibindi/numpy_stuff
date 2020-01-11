@@ -12,23 +12,18 @@ Magnetfeld B -> Tesla [(N/C)/(m/s) = N/(A*m)]
 """
 
 import numpy as np
+from .. import basic
 
 """
 Konstanten
 """
 elementarladung = 1.6022e-19
 
-def sinus(angle):
-    """
-    Damit Sinus von pi auch 0 gibt und nicht eine
-    sehr kleine Zahl.
-    """
-    val = np.sin(angle)
-    if val > 1.22465e-16:
-        return val
-    else:
-        return 0
-    
+
+"""
+Formeln
+"""
+
 def lorentzkraft(q,v_v, B_v):
     
     """
@@ -48,12 +43,18 @@ def lorentzkraft_betraege(q, v, B, sigma):
     sigma = Zwischenwinkel Geschwindigkeits-Vektor und
     Magnetfeld-Vektor
     """
-    return q * v * B * sinus(sigma)
+    return q * v * B * basic.sinus(sigma)
  
 def tesla2gauss(t):
+    """
+    Umwandlung Telsa zu Gauss
+    """
     return t*1e-4
 
 def gauss2tesla(g):
+    """
+    Umwandlung Gauss zu Telsa
+    """
     return g*1e4
 
 
