@@ -5,14 +5,14 @@ Created on Sat Jan 11 11:32:27 2020
 @author: Lucas
 """
 
+import numpy as np
+from .. import basic
+
 """
 Einheiten
 Magnetfeld B -> Tesla [(N/C)/(m/s) = N/(A*m)]
                 1  Tesla = 10^4 Gauss
 """
-
-import numpy as np
-from .. import basic
 
 """
 Konstanten
